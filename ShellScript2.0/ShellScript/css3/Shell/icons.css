@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import url('animation.css');
+@import url('shellicon.css');
+
+
+[class^="Shellicon-"], [class*=" Shellicon-"]{
+	width: 32px;
+    height: 32px;
+	display: inline;
+    transition: all 0.5s;
+}

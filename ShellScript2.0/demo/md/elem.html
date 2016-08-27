@@ -1,0 +1,175 @@
+<style>
+	.titil{
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>
+<h2 class="title">Trabajo con Elementos</h2>
+<p>
+	Poseemos funciones para agregar elementos, copiarlos, moverlos, clonarlos, herencias y removerlos veremos a continuaci&oacute;n cuales son:
+</p>
+<label class="titil">Herencias</label>
+<p>
+	Para saber cual es el padre de un elemento ShellScript no posee ningna funci&oacute;n ya que es un metodo establecido
+	al seleccionar un elemento en si
+</p>
+<pre>
+<span class="coment1">//Al hacer esto</span>
+<span class="privadas">var</span> a = <span class="shell">S</span>(<span class="string">"mielemento"</span>);
+<span class="coment2">/*
+ * la variable a es un objeto que contiene
+ * length      cantidad de elementos seleccionados
+ * padre       es el padre del elemento selecionado
+ * selector    es el string o texto escrito entre los parentesis en 
+ *             este caso mielemento
+ * thisElement el elemento o array de elementos selecionados
+ * asi que si deseamos el padre solo devemos colocar lo siguiente
+ */</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">padre</span>;
+<span class="coment1">//o</span>
+a.<span class="shell">padre</span>;
+</pre>
+<dl>
+	<dt inline>abuelo</dt>
+	<dd inline>Busca el abuelo del elemento dado y retorna el  elemento que es abuelo o null </dd>
+</dl>
+<pre>
+<span class="privadas">var</span> a = <span class="shell">S</span>(<span class="string">"body"</span>).<span class="shell">abuelo</span>();
+<span class="coment1">//esta variable tiene al abuelo de body que es document</span>
+</pre>
+<dl>
+	<dt inline>hijo</dt>
+	<dd inline>Busca todos los hijos del elemeto retorna un HTMLCollection o null</dd>
+</dl>
+<pre>
+<span class="privadas">var</span> a = <span class="shell">S</span>(<span class="string">"body"</span>).<span class="shell">hijo</span>();
+<span class="coment1">//esta variable tiene a todos los hijos de body en forma de array</span>
+</pre>
+<dl>
+	<dt inline>prihijo</dt>
+	<dd inline>Obtine el primer hijo del elemeto retorna el primer hijo o null</dd>
+</dl>
+<pre>
+<span class="privadas">var</span> a = <span class="shell">S</span>(<span class="string">"body"</span>).<span class="shell">prihijo</span>();
+</pre>
+<dl>
+	<dt inline>ulhijo</dt>
+	<dd inline>Obtine el &uacute;ltimo hijo del elemeto retorna el &uacute;ltimo hijo o null</dd>
+</dl>
+<pre>
+<span class="privadas">var</span> a = <span class="shell">S</span>(<span class="string">"body"</span>).<span class="shell">ulhijo</span>();
+</pre>
+<dl>
+	<dt inline>Sigher</dt>
+	<dd inline>Obtine el siguiente hermano del elemeto es decir el que esta despues del elemento dado retorna el hermano o null</dd>
+</dl>
+<pre>
+<span class="privadas">var</span> a = <span class="shell">S</span>(<span class="string">"body"</span>).<span class="shell">Sigher</span>();
+</pre>
+<dl>
+	<dt inline>Prevher</dt>
+	<dd inline>Obtine el hermano anterior del elemeto es decir el que esta despues del elemento dado retorna el hermano o null</dd>
+</dl>
+<pre>
+<span class="privadas">var</span> a = <span class="shell">S</span>(<span class="string">"body"</span>).<span class="shell">Prevher</span>();
+</pre>
+<label class="titil">Nuevos elemenos y manipulaci&oacute;n</label>
+<p>
+	Para crear nuevos elemetos con ShellScript es muy sencillo ya que como se selecciona un
+	elemento se le puede pasar un segundo argumento que son parametros de creaci&oacute;n.
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"div"</span>,{
+	propiedades
+})
+</pre>
+<p>
+	De esta forma hemos creado un nuevo elemento y aun no lo hemos asignado al DOM,
+	las propiedades son funciones de ShellScript o de Javascript pasadas como metodos.
+</p>
+<pre>
+<span class="privadas">var</span> element =<span class="shell">S</span>(<span class="string">"div"</span>,{
+	<span class="shell">html</span>:<span class="string">"Soy un div"</span>
+})
+<span class="coment1">//que es lo mismo</span>
+<span class="shell">S</span>(<span class="string">"div"</span>).<span class="shell">html</span>(<span class="string">"Soy un div"</span>);
+</pre>
+<p>
+	La diferencia entre ambos es que con el primero estamos creando un nuevo div y con el segundo
+	estamos dandole un texto a un div existente.
+</p>
+<p>
+	las funciones para agregar nuevos elementos son las siguiente:<br/>
+	<cite>Veremos la varible element que representa el nuevo elemento que creamos en el ejemplo anterior</cite>
+</p>
+<dl>
+	<dt inline>antes</dt>
+	<dd inline>agrega el nuevo elemento antes de un elemento dado</dd>
+</dl>
+<pre>
+element.<span class="shell">antes</span>(<span class="string">"h3"</span> <span class="coment1">//selector o elemeto</span>);
+</pre>
+<dl>
+	<dt inline>despues</dt>
+	<dd inline>agrega el nuevo elemento despues de un elemento dado</dd>
+</dl>
+<pre>
+element.<span class="shell">despues</span>(<span class="string">"h3"</span> <span class="coment1">//selector o elemeto</span>);
+</pre>
+<dl>
+	<dt inline>agregar</dt>
+	<dd inline>agrega el nuevo elemento al elemento dado como hijo</dd>
+</dl>
+<pre>
+element.<span class="shell">agregar</span>(<span class="string">"h3"</span> <span class="coment1">//selector o elemeto</span>);
+</pre>
+<dl>
+	<dt inline>prefijar</dt>
+	<dd inline>agrega el nuevo elemento como primer hijo del elemento dado</dd>
+</dl>
+<pre>
+element.<span class="shell">prefijar</span>(<span class="string">"h3"</span> <span class="coment1">//selector o elemeto</span>);
+</pre>
+<p>
+	Contamos adem&aacute;s con una funci&oacute;n que nos permite remover elemetos y se llama remover
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">remover</span>();
+</pre>
+
+<p>
+	Tienes una para remplazar la cual remplaza un elemeto por otro
+</p>
+<pre>
+element.<span class="shell">remplazar</span>(<span class="string">"h3"</span> <span class="coment1">//el elemento a remplazar</span>);
+</pre>
+<p>
+	Con clon podemos clonar elemetos y le pasamos un argumento boolean que por defecto es
+	TRUE (verdadero) el cual establece si se debe clonar con sus hijo o false (falso) si solo se clona el elemento
+</p>
+<pre>
+<span class="privadas">var</span> mielemento = <span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">clon</span>();
+<span class="coment2">/*
+ * la variable mielemento ahora contine el clon del elemeto
+ * seleccionado listo para ser modificado o introducido al HTML
+ */</span>
+</pre>
+<p>
+	Para mover elementos ShellScript nos ofrece la funci&oacute;n moverElem la cual recibe como &uacute;nico parametro
+	el elemento de refencia 
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">moverElem</span>(<span class="string">"h3"</span> <span class="coment1">//selector o elemeto</span>);
+<span class="coment1">//el elemento sera movido despues del elemeto de refencia</span>
+</pre>
+<p>
+	Por &uacute;ltimo tenemos la funci&oacute;n OuterElem la cual nos permite encerrar un elementos
+	detro de otro. Los argumentos que recibe esta funci&oacute;n son los mismo que dariamos si queremos 
+	crear un elemento nuevo con ShellScript
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"h3"</span>).<span class="shell">OuterElem</span>(<span class="string">"div"</span>,{
+	parametros
+});
+<span class="coment1">//el h3 sera encerrado dentro de un nuevo div</span>
+</pre>

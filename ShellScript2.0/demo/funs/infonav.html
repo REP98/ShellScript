@@ -1,0 +1,37 @@
+<h2 class="title">Informaci&oacute;n del Navegador</h2>
+<p>
+	Tambi&eacute;n podemos obtener m&aacute;s informaci&oacute;n de nuestro navegador con estas funciones &uacute;tiles
+</p>
+<dl>
+	<dt inline>url_active</dt>
+	<dd inline>Obtiene datos de la url activa y devuelve un ojeto con todos sus parametros</dd>
+</dl>
+<pre>
+<span class="shell">S</span>.<span class="shell">url_active</span>(); 
+<span class="coment2" id="url"></span> 
+</pre>
+<script>
+S("#url").html("/*\n* Retorna \n* {\n* "+S.url_active().join(",\n* "," : ")+"''\n* }\n*/");
+</script>
+<dl>
+	<dt inline>navegador</dt>
+	<dd inline>Obtiene informaci&oacute;n del navegador</dd>
+</dl>
+<pre>
+<span class="shell">S</span>.<span class="shell">navegador</span>(); 
+<span class="coment2" id="nav"></span> 
+</pre>
+<script>
+S("#nav").html("/*\n* Retorna \n* {\n* "+S.navegador().join(",\n* "," : ")+"''\n* }\n*/");
+</script>
+<dl>
+	<dt inline>pantalla</dt>
+	<dd inline>Obtiene informaci&oacute;n de la pantalla</dd>
+</dl>
+<pre>
+<span class="shell">S</span>.<span class="shell">pantalla</span>(); 
+<span class="coment2" id="pan"></span> 
+</pre>
+<script>
+S("#pan").html("/*\n* Retorna \n* {\n* "+S.pantalla().join(",\n* "," : ")+"''\n* }\n*/");
+</script>

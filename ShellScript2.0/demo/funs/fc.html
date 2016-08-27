@@ -1,0 +1,74 @@
+<style>
+	.titil{
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>
+<h2 class="title">Funciones de Conversi&oacute;n</h2>
+<p>
+	ShellScript posee funciones de conversi&oacute;n de datos y de matem&aacute;tica. 
+</p>
+<label class="titil">Conversi&oacute;n de colores</label>
+<dl>
+	<dt inline>Hex_Rgb</dt>
+	<dd inline>Convierte un valor hexadecimal en RGB. Resibe como unico parametro el valor hexadecimal y retorna un objeto</dd>
+</dl>
+<dl>
+	<dt inline>Rgb_Hex</dt>
+	<dd inline>Convierte un valor RGB en hexadecimal. Resibe los parametros r g y b y retorna un string hexadecimal</dd>
+</dl>
+<dl>
+	<dt inline>Rgb_Hsl</dt>
+	<dd inline>Convierte un valor RGB en  HSL. Resibe los parametros r g y b y retorna un objeto</dd>
+</dl>
+<dl>
+	<dt inline>Rgba_Hsla</dt>
+	<dd inline>Convierte un valor RGBA en  HSLA (con canales alfa). Resibe los parametros r, g, b y a y retorna un objeto</dd>
+</dl>
+<dl>
+	<dt inline>Hsl_Rgb</dt>
+	<dd inline>Convierte un valor HSL en  RGB. Resibe los parametros h, s y l y retorna un objeto.</dd>
+</dl>
+<dl>
+	<dt inline>Hsla_Rgba</dt>
+	<dd inline>Convierte un valor HSLA en  RGBA (con canales alfa). Resibe los parametros h, s, l y a y retorna un objeto.</dd>
+</dl>
+<label class="titil">Matem&aacute;ticas</label>
+<dl>
+	<dt inline>radDeg</dt>
+	<dd inline>Convierte grados en radiantes; &uacute;tiles para trabaja con canvas y circulos</dd>
+</dl>
+<dl>
+	<dt inline>HexDec</dt>
+	<dd inline>Convierte un n&uacute;mero hexadecimal en decimal</dd>
+</dl>
+<dl>
+	<dt inline>DecHex</dt>
+	<dd inline>Convierte un n&uacute;mero decimal en hexadecimal</dd>
+</dl>
+<dl>
+	<dt inline>Num_Por</dt>
+	<dd inline>Retorna el n&uacute;mero multipicado por 100, &uacute;til para trabajar con procentajes</dd>
+</dl>
+<dl>
+	<dt inline>porcentaje</dt>
+	<dd inline>Calcula el porcentaje dado</dd>
+</dl>
+<label class="titil">Ejemplo</label><br/>
+<label>Inforamci&oacute;n del color</label><br/>
+<input type="color" value ="#000000" id="ge"/><br/>
+<label>HSL: </label> <span id="hsl" style="text-transform: uppercase;"></span><br/>
+<label>RGB: </label> <span id="rgb" style="text-transform: uppercase;"></span><br/>
+<label>HEX: </label> <span id="hex"></span><br/>
+<script>
+S("#ge").SimpleColor({
+	title:'Selecionar color',
+	fn:function(t){
+		S("#hex").html(t);
+		var rgb = S.Hex_Rgb(t);
+		S("#rgb").html(rgb.join(", "," "));
+		var hsl = S.Rgb_Hsl(rgb.r, rgb.g, rgb.b);
+		S("#hsl").html(hsl.join(", "," "));
+	}
+});
+</script>

@@ -1,0 +1,103 @@
+<h2 class="title">Validadores</h2>
+<p>
+	ShellScript posee m&uacute;ltiples funciones que validan el tipo de un objeto retornado verdadero o falso o si el existe,
+	estos validadores son:
+</p>
+<dl>
+	<dt inline>Classexiste</dt>
+	<dd inline>Valida si una clase pertenece a un elemento</dd>
+</dl>
+<dl>
+	<dt inline>enArray</dt>
+	<dd inline>Busca un valor en un array u objeto y retorna su posici&oacute;n en caso de encontrarlo en su defecto -1</dd>
+</dl>
+<dl>
+	<dt inline>esArray</dt>
+	<dd inline>Verifica si es un array</dd>
+</dl>
+<dl>
+	<dt inline>esBooleno</dt>
+	<dd inline>Valida si un valor es booleano (es decir TRUE o FALSE);</dd>
+</dl>
+<dl>
+	<dt inline>esElem</dt>
+	<dd inline>Verifica si es un elemento HTML</dd>
+</dl>
+<dl>
+	<dt inline>esFecha</dt>
+	<dd inline>Verifica si es una fecha o objeto DATE</dd>
+</dl>
+<dl>
+	<dt inline>esFuncion</dt>
+	<dd inline>Valida si  es una funci&oacute;n</dd>
+</dl>
+<dl>
+	<dt inline>esNumero</dt>
+	<dd inline>Verifica si es un n&uacute;mero</dd>
+</dl>
+<dl>
+	<dt inline>esObj</dt>
+	<dd inline>Verifica si es un objeto</dd>
+</dl>
+<dl>
+	<dt inline>esRegExp</dt>
+	<dd inline>Verifica si es una expresion regular</dd>
+</dl>
+<dl>
+	<dt inline>esString</dt>
+	<dd inline>Valida si un valor es una cadena de texto;</dd>
+</dl>
+<dl>
+	<dt inline>esUndefined</dt>
+	<dd inline>Verifica si es indefinido</dd>
+</dl>
+<dl>
+	<dt inline>esVisible</dt>
+	<dd inline>Valida si un objeto dado es visible</dd>
+</dl>
+<dl>
+	<dt inline>esWindow</dt>
+	<dd inline>Verifica si es una ventana</dd>
+</dl>
+<dl>
+	<dt inline>existe</dt>
+	<dd inline>Verifica si un elemento existe</dd>
+</dl>
+<dl>
+	<dt inline>key_existe</dt>
+	<dd inline>Valida si existe un clave en un Array o en un objeto. si conocen PHP sabran que existe una funci&oacute;n llamada array_key_exists, esta funci&oacute;n es impirada el la de PHP</dd>
+</dl>
+<dl>
+	<dt inline>ObjLength</dt>
+	<dd inline>Obtiene el tama&ntilde;o de un array u objeto</dd>
+</dl>
+<p>
+	Veamos un ejemplos:
+</p>
+<pre>
+<span class="shell">S</span>.<span class="shell">existe</span>(<span class="string">&quot;body&quot;</span>); <span class="coment1">//retorna TRUE</span>
+
+<span class="privadas">var</span> a;
+<span class="shell">S</span>.<span class="shell">esUndefined</span>(a); <span class="coment1">//retorna TRUE</span>
+
+
+<span class="shell">S</span>.<span class="shell">esNumero</span>(<span class="number">1</span>);<span class="coment1">//retorna TRUE</span>
+
+<span class="shell">S</span>(<span class="string">"h2"</span>).<span class="shell">Classexiste</span>(<span class="string">"title"</span>);<span class="coment1">//retorna TRUE</span>
+<span class="shell">S</span>.<span class="shell">Classexiste</span>(<span class="string">"div"</span>,<span class="string">"subTitle"</span>);<span class="coment1">//retorna TRUE</span>
+
+<span class="privadas">var</span> h = [<span class="string">"Shell"</span>,<span class="string">"Script"</span>];
+<span class="privadas">var</span> b = {Shell:<span class="string">"Script"</span>};
+<span class="shell">S</span>.<span class="shell">enArray</span>(<span class="string">"Shell"</span>,h);<span class="coment1">//retorna 0</span>
+<span class="shell">S</span>.<span class="shell">enArray</span>(<span class="string">"Script"</span>,b);<span class="coment1">//retorna Shell</span>
+
+<span class="privadas">var </span>arrays = [<span class="string">"Shell"</span>,<span class="string">"Script"</span>];
+<span class="privadas">var </span>obj = {sript:<span class="string">"Shell"</span>,shell:<span class="string">"Script"</span>};
+<span class="shell">S</span>.<span class="shell">key_existe</span>(<span class="nomber">0</span>,arrays);<span class="coment1">//retorna Shell</span>
+<span class="shell">S</span>.<span class="shell">key_existe</span>(<span class="string">"sript"</span>,obj);<span class="coment1">//retorna Shell</span>
+
+<span class="privadas">var</span> r= {a:<span class='number'>0</span>,b:<span class='number'>1</span>,c:<span class='number'>2</span>,d:<span class='number'>3</span>};
+<span class="privadas">var</span> t=[<span class="string">"Shell"</span>,<span class="string">"Script"</span>];
+<span class="shell">S</span>.<span class="shell">ObjLength</span>(t); <span class="coment1">//retorna 2</span> 
+<span class="shell">S</span>.<span class="shell">ObjLength</span>(r); <span class="coment1">//retorna 4</span> 
+</pre>

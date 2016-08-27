@@ -1,0 +1,39 @@
+<h2 class="title">Introducci&oacute;n</h2>
+<p>
+	ShellScrit posee varias funciones para trabajar e interactuar con el DOM, en las cuales
+	podemos encontrar funciones para trabajar con apariencia, animaciones, formularios y m&aacute;s.
+</p>
+<p>
+	ShellScript mejora la espectativa y velocidad de los eventos del DOM adem&aacute;s ofrece m&eacute;todos
+	para acceder a ellos. Estos son algunos de los eventos de ShellScript <b>&quot;click dblclick focus blur change keydown keyup keypress
+	mouseout mouseover mousemove mousedown mouseup scroll drop drag dragenter dragover dragleave dragstart dragend touchstart touchend touchmove&quot;</b>
+	uso:
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">'selector'</span>).<span class="shell">evento</span>(<span class="privadas">function</span>(e){
+	<span class="coment1">//C&oacute;digo</span>
+})
+</pre>
+<p>
+	Tambi&eacute;n existe   otro   evento   llamado  &quot;sp&quot;  el   cual   permite   ejecutar   cualquiera   
+de los eventos antes mencionados y cualquier otro evento relacionado con el DOM. Adem&aacute;s permite 
+asignar m&uacute;ltiples eventos a la vez.
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">'selector'</span>).<span class="shell">sp</span>(<span class="string">"evento evento"</span>,<span class="privadas">function</span>(e){
+	<span class="coment1">//C&oacute;digo</span>
+})
+</pre>
+<p>
+	ShellScript tambi&eacute;n controla los eventos y maneja de manera que no tengamos dificultad de compatibilidad 
+	cuando queremos tomar un valor en un elemento, por ejemplo las coordernadas del mouse.
+</p>
+<p>
+	Ademas contamos con la funci&oacute;n <b>Simula</b> la cual se encarga de simular un evento.
+</p>
+<pre>
+<span class="shell">S</span>.<span class="shell">Simula</span>(<span class="string">"elemento, evento"</span>);
+</pre>
+<p>
+	Acontinuaci&oacute;n veremos todos estos eventos y todas las formas de manejar el DOM 
+</p>

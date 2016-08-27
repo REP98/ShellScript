@@ -1,0 +1,31 @@
+<h2 class="title">ForEach</h2>
+<p>
+	El ForEach es una de las funciones mas usadas en ShellScript y por ello es una de las
+	m&aacute;s importantes a la hora de trabajar. te permite recorrer matrices, objetos y elementos;
+	Ademas de que puedes asiganar parte o todo de una variable a otra.
+</p>
+<pre>
+<span class="shell">S</span>.<span class="shell">forEach</span>(
+	<span class="shell">OBJ</span><span class="coment1">//Objeto, matriz o elemento</span>,
+	<span class="shell">fn</span><span class="coment1">//una funci&oacute;n para interactuar con el objeto</span>,
+	<span class="shell">obj</span><span class="coment1">//Objeto que obtendra los valores del primer ojeto</span>,
+	<span class="shell">rango</span><span class="coment1">//Array que contendra el inicio y fin que se va a recorre</span>
+);
+<span class="coment1">//Si se va a recorrer un elemento se puede usar de esta forma</span>
+<span class="shell">S</span>(<span class="string">&quot;elemento&quot;</span>).<span class="shell">forEach</span>(<span class="coment1">//Los mismo parametros de arriva omitiento el primero</span>);
+<span class="coment1">//Las funciones reciven 3 argumetos el this, el indice y el valor veamos un ejemplo</span>
+<span class="shell">S</span>(<span class="string">&quot;spna&quot;</span>).<span class="shell">forEach</span>(<span class="privadas">function</span>(i,v){
+		console.log(<span class="string">&quot;Indice es: &quot;</span>+i,<span class="string">&quot;El Valor es: &quot;</span>+v);
+	}});
+</pre>
+<button id="s">Recorrer span</button>
+<div id="re">Respuesta</div>
+<script>
+	S("#s").click(function(){
+		var t = "";
+		S("span").forEach(function(i,v){
+			t += "Indice es: "+i+"El Valor es: "+S.htmlentities(v.outerHTML)+"<br/>";
+		})
+		S("#re").html(t);
+	})
+</script>

@@ -1,0 +1,223 @@
+<style>
+	.titil{
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>
+<h2 class="title">Trabajando con Estilo</h2>
+<p>
+	En este tema Shellscript tiene un mini framework de css3 con responsive, 
+	animaciones y m&aacute;s, posee clases para asignarlos a los elementos de distintas
+	formas veamos algunos ejemplos:
+</p>
+<div class="btn">Soy un Div</div>
+<button>Un Button sin clase</button>
+<button class="Ok">Soy Clase Ok</button>
+<button class="Clear">Soy Clase Clear</button>
+<p>
+	Tambi&eacute;n se posee apariencia nueva para los checkbox y radio con las clases checkbox y radio asignado de esta menera:
+</p>
+<pre>
+<span class="coment1">&lt;!-- checbox --&gt;</span>	
+&lt;div class="checkbox"&gt;
+&lt;input type="checkbox"/&gt;
+&lt;label&gt;&lt;/label&gt;
+&lt;/div&gt;
+<span class="coment1">&lt;!-- radio --&gt;</span>	
+&lt;div class="radio"&gt;
+&lt;input type="radio"/&gt;
+&lt;label&gt;&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+<div class="checkbox">
+<input type="checkbox"/>
+<label></label>
+</div>soy checkbox
+<div class="radio">
+<input type="radio" name="sr"/>
+<label></label>
+</div>
+<div class="radio">
+<input type="radio" name="sr"/>
+<label></label>
+</div>somos  radio
+<p>
+	La case title, header y subTitle sirven para mostrar un un t&iacute;tulo o subt&iacute;tulo de manera sencilla, la clase header y title se comportan igual
+</p>
+<hr/>
+<div class="title">Soy un T&iacute;tulo</div>
+<br/>
+<div class="subTitle">Soy un subt&iacute;tulo</div>
+<br/>
+<hr/>
+<p>
+	Adem&aacute;s le asigna estilos a los elementos de manera prederminada.
+	los parrafos &quot;p&quot; le coloca una identaci&oacute;n, las etiquetas hr
+	le da la apariencia que vemos en la linea que esta arriba, lo input, textareas, a y otros elementos
+	son transformado por el tema establecido. Para establecer un tema solo deben colocar
+	en la etiqueta HTMl data-themen="tutema" es caso de omitirlo le pondra el tema shell que es
+	el que vemos en esta pagina. si deseamos crear un nuevo tema en la carpeta de Framework
+	encontras un carpeta llamada css3 en ella crea una carpeta con el nombre de tu tema y adentro establece el 
+	archivo pricipla el cual se debe llamar ShellScript.css y dentro podras incluir tus hojas de estilos 
+	con @import url('style.css'); luego debes colocar en el HTML data-themen="nombre_de_la_carpeta" y listo tu p&aacute;gina
+	trabajara con un nuevo tema css.
+</p>
+<p>
+	Tambi&eacute;n se posee funciones para trabajar con estilos y apariencia las cuales veremos a continuaci&oacute;n:
+</p>
+<label class="titil">stylo</label>
+<p>
+	Se usa para asignar o obtener los estilos css de un elemento.
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">stylo</span>(propety, value);
+<span class="coment1">//Usos</span>
+<span class="coment1">//Establecer estilos</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">stylo</span>(<span class="string">"propiedad"</span>, <span class="string">"valor"</span>);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">stylo</span>({
+	propiedad:valor
+});
+<span class="coment2">/*
+ * en la primera se asigna solo una propiedad y su valor
+ * el la segunda se envia un objeto de propiedad y valores css
+ */
+</span>
+<span class="coment1">//Obtener estilos</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">stylo</span>();
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">stylo</span>(<span class="string">"propiedad"</span>);
+<span class="coment2">/*
+ * en la primera se obtinen todos las propiedades css que posee el elemento 
+ * el la segunda se obtine el valor de la propiedad pasada 
+ */
+</span>
+</pre>
+<label class="titil">removeStylo</label>
+<p>
+	Se usa para eliminar una o varias propiedades css
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeStylo</span>(propety);
+<span class="coment1">//Usos</span>
+<span class="coment1">//Remover estilos</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeStylo</span>(<span class="string">"propiedad"</span>);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeStylo</span>([
+	<span class="string">"propiedad1"</span>,<span class="string">"propiedad2"</span>
+]);
+<span class="coment2">/*
+ * en la primera se asigna solo una propiedad y su valor
+ * el la segunda se envia un objeto de propiedad y valores css
+ */
+</span>
+</pre>
+<label class="titil" id="aa">ancho y alto</label>
+<p>
+	Se usa para obtener o establecer el ancho y alto de un elemeto seg&uacute;n la funci&oacute;n 
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">ancho</span>(valor);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">alto</span>(valor);
+<span class="coment1">//Usos</span>
+<span class="coment1">//Establecer</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">ancho</span>(valor);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">alto</span>(valor);
+<span class="coment1">//Obtiene</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">ancho</span>();
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">alto</span>();
+</pre>
+<label class="titil">posicion</label>
+<p>
+	Se usa para obtener o establecer una posici&oacute;n a un elemento dado.
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">posicion</span>(tipo,left,top);
+<span class="coment1">//Usos</span>
+<span class="coment1">//Establecer</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">posicion</span>(<span class="string">"Tipo"</span>,<span class="string">"left"</span>,<span class="string">"top"</span>);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">posicion</span>({
+	position:<span class="string">"tipo"</span>,
+	top:<span class="string">"top"</span>
+	left:<span class="string">"lef"</span>
+});
+<span class="coment2">/*
+ * se puede establecer la posicion ya sea por la primera forma
+ * la segunda la diferencia es que el la segunda puede establecer uno
+ * de los 3 parametros y en la primera debes establecerlos todos
+ */
+</span>
+<span class="coment1">//Otener</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">posicion</span>();
+<span class="coment1">//retorna un objeto con la informaci&oacute;n de la posici&oacute;n del elemento</span>
+</pre>
+<label class="titil">cssSelect</label>
+<p>
+	Este es un plugin de Shellscript2.0 el cual crea un select o solo le da apariencia a un select existente ejemplo:
+</p>
+<select>
+	<option>Elije</option>
+	<option>opcion1</option>
+	<option>opcion2</option>
+</select>
+<select id="cose">
+	<option>Elije</option>
+	<option>opcion1</option>
+	<option>opcion2</option>
+</select>
+<p>
+	el primero es un select sencillo y el segundo tiene la apariencia dada por la funci&oacute;n
+	cssSelect. este plugin sera mejor explicado el la seccion plugin/cssSelect
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"#select"</span>).<span class="shell">cssSelect</span>();
+</pre>
+<label class="titil">cssForm</label>
+<p>
+	Otro plugin de Shellscript encargado de cambiar la apariencia a los formularios completos
+</p>
+<label class="titil">Un formulario sencillo</label>
+<form>
+	<label>Nombre</label>
+	<input type="text" name="text">
+	<label>Correo El&eacute;ctronico</label>
+	<input type="email" name="email">
+	<label>Tel&eacute;fono</label>
+	<input type="tel" name="tel">
+	<label>P&aacute;gina Web</label>
+	<input type="url" name="page">
+	<label>Sexo</label>
+	<select>
+		<option>Elije</option>
+		<option>Femenino</option>
+		<option>Masculino</option>
+	</select>
+</form>
+<label class="titil">El mismo formulario pero con cssForm</label>
+<form id="form">
+	<label>Nombre</label>
+	<input type="text" name="text">
+	<label>Correo El&eacute;ctronico</label>
+	<input type="email" name="email">
+	<label>Tel&eacute;fono</label>
+	<input type="tel" name="tel">
+	<label>P&aacute;gina Web</label>
+	<input type="url" name="page">
+	<label>Sexo</label>
+	<select>
+		<option>Elije</option>
+		<option>Femenino</option>
+		<option>Masculino</option>
+	</select>
+</form>
+<p>
+	Esta funci&oacute;n no recibe ning&uacute;n parametro solo el formulario y ya.
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"#form"</span>).<span class="shell">cssForm</span>();
+</pre>
+<script>
+	S("#cose").cssSelect();
+	S("#form").cssForm();
+</script>

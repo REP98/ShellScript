@@ -1,0 +1,175 @@
+<h2 class="title">Selectores</h2>
+<p>
+		ShellScript tiene la capacidad de seleccionar cualquier elemento por los selectores
+	de css, por ejemplo: #id para un id .css, tagname etc., a medida que avancemos ver&aacute;s c&oacute;mo podemos
+	seleccionar algunos elementos.
+	<br/>
+	<cite>Nota: Ni el autor sabe con exactitud la cantidad de selectores que ShellScript acepta pero veamos algunos</cite>.
+</p>
+<hr/>
+<h3>Selector Basicos</h3>
+<dl>
+	<dt inline>&#42;</dt>
+	<dd inline>Selecciona todos los elementos del HTML</dd>
+</dl>
+<dl>
+	<dt inline>E</dt>
+	<dd inline>Selecciona todos los elementos E que estan en el HTML</dd>
+</dl>
+<dl>
+	<dt inline>E, H</dt>
+	<dd inline>Selecciona todos los elementos E y H que estan en el HTML</dd>
+</dl>
+<dl>
+	<dt inline>E H</dt>
+	<dd inline>Selecciona todos los elementos H que estan dentro de E</dd>
+</dl>
+<dl>
+	<dt inline>E &#42; H</dt>
+	<dd inline>Selecciona todos los elementos H que estan dentro de todos los hijos de E</dd>
+</dl>
+<dl>
+	<dt inline>.class</dt>
+	<dd inline>Selecciona todos los elementos que tengan la clase class</dd>
+</dl>
+<dl>
+	<dt inline>E.class</dt>
+	<dd inline>Selecciona todos los elementos E que tengan la clase class</dd>
+</dl>
+<dl>
+	<dt inline>E .class</dt>
+	<dd inline>Selecciona todos los elementos que tengan la clase class dentro de E</dd>
+</dl>
+<dl>
+	<dt inline>&#35;mi_id</dt>
+	<dd inline>Selecciona todos los elementos que tengan el id mi_id</dd>
+</dl>
+<dl>
+	<dt inline>E&#35;mi_id</dt>
+	<dd inline>Selecciona todos los elementos E que tengan el id mi_id</dd>
+</dl>
+<dl>
+	<dt inline>E &#35;mi_id</dt>
+	<dd inline>Selecciona todos los elementos que tengan el id mi_id dentro de E</dd>
+</dl>
+<hr/>
+<h3>Selectores avanzados</h3>
+<dl>
+	<dt inline>E &gt; H</dt>
+	<dd inline>Selecciona todos los elementos H que sea hijos directos de E</dd>
+</dl>
+<dl>
+	<dt inline>E &#43; H</dt>
+	<dd inline>Selecciona todos los elementos H que esten acontinuaci&oacute;n de E donde E y H son hermanos</dd>
+</dl>
+<dl>
+	<dt inline>E &#126; H</dt>
+	<dd inline>Selecciona todos los elementos H que sean hermanos E.</dd>
+</dl>
+<h4>Selectores por atributos</h4>
+<dl>
+	<dt inline>&#91;nombre_atributo&#93;</dt>
+	<dd inline>Selecciona los elementos que tienen establecido el atributo llamado nombre_atributo, independientemente de su valor</dd>
+</dl>
+<dl>
+	<dt inline>&#91;nombre_atributo&#61;&quot;valor&quot;&#93;</dt>
+	<dd inline>Selecciona los elementos que tienen establecido un atributo llamado nombre_atributo con un valor igual a valor.</dd>
+</dl>
+<dl>
+	<dt inline>&#91;nombre_atributo&#126;&#61;&quot;valor&quot;&#93;</dt>
+	<dd inline>Selecciona los elementos que tienen establecido un atributo llamado nombre_atributo y al menos uno de los valores del atributo es valor.</dd>
+</dl>
+<dl>
+	<dt inline>&#91;nombre_atributo&#124;&#61;&quot;valor&quot;&#93;</dt>
+	<dd inline>Selecciona los elementos que tienen establecido un atributo llamado nombre_atributo y cuyo valor es una serie de palabras separadas con guiones, pero que comienza con valor. Este tipo de selector sólo es útil para los atributos de tipo lang que indican el idioma del contenido del elemento.</dd>
+</dl>
+<dl>
+	<dt inline>&#91;nombre_atributo&#94;&#61;&quot;valor&quot;&#93;</dt>
+	<dd inline>selecciona todos los elementos que tienen establecido un atributo llamado nombre_atributo y cuyo valor comienza exactamente por la cadena de texto indicada.</dd>
+</dl>
+<dl>
+	<dt inline>&#91;nombre_atributo&#42;&#61;&quot;valor&quot;&#93;</dt>
+	<dd inline>selecciona todos los elementos que tienen establecido un atributo llamado nombre_atributo y cuyo  valor contiene la cadena de texto indicada.</dd>
+</dl>
+<hr/>
+<h3>Psudo Clase</h3>
+<div>
+	<dl>
+		<dt inline>E:root</dt>
+		<dd inline>Selecciona el elemento E que es la ra&iacute;z del documento, que en un documento HTML es el elemento HTML.</dd>
+	</dl>
+	<dl>
+		<dt inline>E:first-child</dt>
+		<dd inline>Selecciona el elemento E que es el primer hijo de su padre.</dd>
+	</dl>
+	<dl>
+		<dt inline>E:last-child</dt>
+		<dd inline>Selecciona el elemento E que es el &uacute;ltimo hijo de su padre</dd>
+	</dl>
+	<dl>
+		<dt inline>E:nth-child(n)</dt>
+		<dd inline>Selecciona el elemento E que es el hijo en&eacute;simo de su padre</dd>
+	</dl>
+	<dl>
+		<dt inline>E:nth-last-child(n)</dt>
+		<dd inline>Selecciona el elemento E que es el hijo en&eacute;simo &uacute;ltimo de su padre (igual que el anterior solo que 1 en este caso es el &uacute;ltimo hijo).</dd>
+	</dl>
+	<dl>
+		<dt inline>E:nth-of-type(n)</dt>
+		<dd inline>Selecciona el elemento E que es el hermano en&eacute;sima entre sus pares del mismo tipo dentro de su matriz.</dd>
+	</dl>
+	<dl>
+		<dt inline>E:nth-last-of-type(n)</dt>
+		<dd inline>Selecciona el elemento E que es el hermano en&eacute;sima  &uacute;ltimo entre sus pares del mismo tipo dentro de su matriz (igual que el anterior solo que 1 en este caso es el &uacute;ltimo hermano).</dd>
+	</dl>
+	<dl>
+		<dt inline>E:first-of-type</dt>
+		<dd inline>Selecciona el elemento E que es el primer hermano de su tipo en una lista de hijos de su elemento padre.</dd>
+	</dl>
+	<dl>
+		<dt inline>E:last-of-type</dt>
+		<dd inline>Selecciona el elemento E que tiene un elemento principal y cuya matriz elemento tiene ning&uacute;n elemento de otros hijo del mismo tipo, en otras palabras, el elemento seleccionado es el único de su tipo en el padre.</dd>
+	</dl>
+	<dl>
+		<dt inline>E:only-child</dt>
+		<dd inline>Selecciona el elemento E que es el &uacute;nico hijo dentro de su matriz, independientemente del tipo. Ejemplo:</dd>
+	</dl>
+	<dl>
+		<dt inline>E:only-child</dt>
+		<dd inline>Selecciona el elemento E que es el &uacute;ltimo hermano de su tipo en una lista de hijos de su elemento padre.</dd>
+	</dl>
+	<dl>
+		<dt inline>E:empty</dt>
+		<dd inline>Selecciona el elemento E que no tiene hijos en todo (incluyendo los nodos de texto).</dd>
+	</dl>
+	<dl>
+		<dt inline>E:target</dt>
+		<dd inline>Selecciona el elemento E que hace referencia el identificador de fragmento (si lo hay) de la URL de la p&aacute;gina. Esto le permite seleccionar de forma din&aacute;mica el salt&oacute; a anclar de un ancla HTML en la p&aacute;gina. 
+			Por ejemplo, dada la URL a continuaci&oacute;n: http:&#47;&#47;mysite.com&#47;page.htm &#35;whatsnew
+		</dd>
+	</dl>
+	<dl>
+		<dt inline>:not(s)</dt>
+		<dd inline>Llamado el pseudo-clase negaci&oacute;n selecciona elementos que no son del tipo suministrado por el argumento, donde el argumento es un selector simple (sin incluir la negaci&oacute;n misma pseudo&#45;clase y pseudo&#45;elementos).
+		</dd>
+	</dl>
+	<dl>
+		<dt inline>E:enabled</dt>
+		<dd inline>Selecciona el elemento E que est&aacute; habilitado, m&aacute;s com&uacute;nmente formar elementos.
+		</dd>
+	</dl>
+	<dl>
+		<dt inline>E:disabled</dt>
+		<dd inline>Selecciona el elemento E que est&aacute; desactivada, m&aacute;s com&uacute;nmente formar elementos.
+		</dd>
+	</dl>
+	<dl>
+		<dt inline>E:checked</dt>
+		<dd inline>Selecciona el elemento E que actualmente est&aacute; marcada (con m&aacute;s frecuencia de radio o casillas de verificaci&oacute;n). "Checked" se define cuando un bot&oacute;n de opci&oacute;n o casilla de verificaci&aacute;n est&aacute; bien seleccionados expresamente por el usuario, o marcada por defecto utilizando la "marcada" y "seleccionados" atributos, respectivamente.
+		</dd>
+	</dl>
+</div>
+<hr/>
+<p>
+	Este es una lista de los selectores posibles en ShellScript pero aun hay m&aacute;s.
+</p>

@@ -1,0 +1,21 @@
+<h2 class="title">Ejemplos</h2>
+<p>
+	Veamos algunos Ejemplos:
+</p>
+<div style="width:200px; height:200px; background-color: #03CA35; padding: 1em;" id="a">
+<pre>
+<span class="coment1">//Selecionado por el id a</span>
+<span class="shell">S</span>(<span class="string">"#a"</span>)
+</pre>
+</div>
+<script>
+	S("#a").hover(function(){
+		S(this).stylo({
+			background:"#FFF"
+		})
+	},function(){
+		S(this).stylo({
+			background:"#03CA35"
+		})
+	})
+</script>

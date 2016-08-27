@@ -1,0 +1,133 @@
+<style>
+	.titil{
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>
+<h2 class="title">Atributos y Clases</h2>
+<p>
+	ShellScript nos facilita la vida a la hora de trabajar con atributos y clases
+	posee varias funciones poderoras que se encargan de todo eso y mas.
+</p>
+<h3>Atributos</h3>
+<p>
+	Para manipurlar cualquier atributo ShellScript nos ofrese 2 funciones <b>atrib</b> y
+	<b>removeAtrib</b>.
+</p>
+<label class="titil">atrib</label>
+<p>
+	Se usa para asignar y buscar atributos de un elemento dado.
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">atrib</span>(attr, valor);
+<span class="coment1">//Usos</span>
+<span class="coment1">//Establecer Atributos</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">atrib</span>(<span class="string">"miatributo"</span>, <span class="string">"mivalor"</span>);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">atrib</span>({
+	miatributo:<span class="string">"mivalor"</span>,
+	miatributo:<span class="string">"mivalor"</span>
+});
+<span class="coment1">//en la primera establese solo un atributo y el la segunda varios atributos</span>
+<span class="coment1">//Buscar Atributos</span>
+<span class="privadas">var</span> a =  <span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">atrib</span>(<span class="string">"miatributo"</span>);
+<span class="coment1">//la variable a ahora tiene el valor del atributo o null de no existir</span>
+</pre>
+<label class="titil">removeAtrib</label>
+<p>
+	Se usa para remover un atributo o varios atributos de un elemento dado.
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeAtrib</span>(attr);
+<span class="coment1">//Usos</span>
+<span class="coment1">//Remover Atributos</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeAtrib</span>(<span class="string">"miatributo"</span>);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeAtrib</span>([
+	<span class="string">"miatributo"</span>,
+	<span class="string">"miatributo"</span>,
+	<span class="string">"miatributo"</span>,
+	<span class="string">"miatributo"</span>
+]);
+<span class="coment2">/*
+ * en la primera remueve solo un atributo y 
+ * el la segunda remueve todos los atributos del array
+ */
+</span>
+</pre>
+<h3>Data</h3>
+<p>
+	Existe el atributo data el cual nos permite crear nuestros propios atributos por ejemplo data-algo, data-rol etc...
+	Para ellos ShellScript desarrollo 2 funciones para trabajar netamente con estos <b>data</b> y <b>removeData</b>.
+</p>
+<label class="titil">data</label>
+<p>
+	Se usa para estableser o buscar un atributo data-"algo".
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">data</span>(key,valor);
+<span class="coment1">//Usos</span>
+<span class="coment1">//Establecer Atributos</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">data</span>(<span class="string">"algo"</span>, <span class="string">"mivalor"</span>);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">data</span>({
+	<span class="string">"algo"</span>:<span class="string">"valor"</span>
+});
+<span class="coment2">/*
+ * en la primera se crea el atributo data-algo
+ * el la segunda se crean varios atributo data-algo
+ * como pueden notar no se coloca data en el atributos
+ * solo lo que va despues de guion ejemplo
+ * data-rol se coloca rol
+ */
+</span>
+<span class="coment1">//Obtener valor Atributos</span>
+<span class="privadas">var</span> a =  <span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">data</span>(<span class="string">"algo"</span>);
+<span class="coment1">//la variable a contiene el valor del atributo data-algo</span>
+</pre>
+<label class="titil">removeData</label>
+<p>
+	Se usa igual que removeAtrib y tienes 2 formas de darles el atributo puedes darle data-rol o solo rol
+	ya sea en un array o string.
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeData</span>(<span class="string">"algo"</span>);
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">removeData</span>([
+	<span class="string">"data-rol"</span>,
+	<span class="string">"rol"</span><span class="coment1">//Es igual al anterior</span>
+]);
+</pre>
+<h3>Clases</h3>
+<p>
+	Otro atributo que se usan son el trabajo de clases. Para ello tenemos multiples funciones y una de ellas la lo habiamos explicado en el 
+	apartado <span class="ancla" data-load="funs/validadores">Funciones / Validadores / Classexiste</span>
+</p>
+<script>
+	S(".ancla").click(function(){
+		var d = S(this).data("load");
+		S("#pages").pageLoad("demo/"+d+".html");
+		S("#pages").thisElement.scrollTop = 0;
+	})
+</script>
+<label class="titil">AddClass</label>
+<p>
+	Se usa para asignar una clase al elemento dado.
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">AddClass</span>(<span class="string">"class"</span>);
+</pre>
+<label class="titil">RemoveClass</label>
+<p>
+	Se usa para remover una clase al elemento dado.
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">RemoveClass</span>(<span class="string">"class"</span>);
+</pre>
+<label class="titil">toggleClass</label>
+<p>
+	Se usa para asignar o remover una clase al elemento dado si el elemento posee la clase se la elimina en su defecto se la asigna
+</p>
+<pre>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">toggleClass</span>(<span class="string">"class"</span>);
+</pre>
+

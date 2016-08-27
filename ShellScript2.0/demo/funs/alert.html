@@ -1,0 +1,122 @@
+<style>
+	.titil{
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>
+<h2 class="title">Funciones Nativas de Javascript</h2>
+<p>
+	ShellScript modifica alguna funciones nativas, para que sean compatibles con todos
+	los navegadores, para cambiar su apariencia o por otras razones. a continuaci&oacute;n 
+	veremos esas funciones.
+</p>
+<h2 class="subTitle">Cuadros de dialogos de Javascript</h2>
+<p>
+	ShellScript cambia radicalmente la apariencia y funcionabilidad del alert, confirm y prompt.
+</p>
+<button id="a">haz click para ver alert</button>
+<pre>
+<span class="coment1">//Sintasis del Alert</span>
+<span class="privadas">alert</span>(<span class="string">"Mensaje a mostrar"</span>,<span class="string">"titulo"</span>,<span class="privadas">funcition</span>(){});
+<span class="coment1">//El del Ejemplo</span>
+<span class="privadas">alert</span>(<span class="string">"Soy un alert basico"</span>,<span class="string">"ShellScript"</span>);
+
+<span class="coment1">//Sintasis del confirm</span>
+<span class="privadas">confirm</span>(<span class="string">"Mensaje a mostrar"</span>,<span class="string">"titulo"</span>,<span class="privadas">funcition</span>(){});
+
+<span class="coment1">//Sintasis del prompt</span>
+<span class="privadas">prompt</span>(<span class="string">"Mensaje a mostrar"</span>, <span class="string">"Valor"</span>,<span class="string">"titulo"</span>,<span class="privadas">funcition</span>(){});
+</pre>
+<h2 class="subTitle">Ejemplos</h2>
+<button id="b" class="Ok">Alert</button><button id="c" class="Ok">Confirm</button><button id="d" class="Ok">Prompt</button>
+
+<div id="r">Mostre la repuesta cada mensaje de vuelto por las funciones establecidas de cada uno</div>
+<script>
+S("#a").click(function(){
+	alert("Soy un alert basico","ShellScript");
+})
+S("#b").click(function(){
+	alert("Esto es un alert","Alert",function(t){
+		S("#r").html(t);
+	});
+});
+S("#c").click(function(){
+	confirm("Crees que esto es una Confirm?","Confirm",function(t){
+		var r="No";
+		if(t){
+			r="Si";
+		}
+		S("#r").html("Respuesta: "+r+"<br/>Valor devuelto: "+t);
+	});
+});
+S("#d").click(function(){
+	prompt("Dame un n&uacute;mero","0","Prompt",function(t){
+		S("#r").html(t);
+	});
+});
+</script>
+<p>
+	Otra funci&oacute;n nativa que ShellScript a modificado es el join que normalmente 
+	esta para los Array ShellScript hace que sea posible su uso tambi&eacute;n en Objetos
+</p>
+<pre>
+	<span class="privadas">Object</span>.join(seperador,union);
+	<span class="coment1">//Ejemplo</span>
+	<span class="privadas">var</span> a ={a:<span class="string">"b"</span>,c:<span class="string">"g"</span>};
+	<span class="privadas">var</span> b = a.join(<span class="string">", "</span>,<span class="string">" => "</span>);
+	<span class="coment1" id="rf"></span>
+</pre>
+<script>
+	var a = {a:"b",c:"g"};
+	var b = a.join(", "," => ");
+	S("#rf").html("//retorna string "+b);
+</script>
+<h2 class="subTitle">Funciones Extendidas por compativilidad</h2>
+<p>
+	Las siguinetes funciones son funciones que se an extendido para que sean compatibles 
+	con todos los navegadores sin necedidad de validad el navegador antes de usarla
+</p>
+
+<label class="titil">window.requestAnimationFrame</label>
+<p>
+	Descripci&oacute;n: Informa al navegador que quieres realizar una animaci&oacute;n y solicita que el navegador 
+	programe el repintado de la ventana para el pr&oacute;ximo ciclo de animaci&oacute;n. El m&eacute;todo acepta 
+	como argumento una funci&oacute;n a la que llamar antes de efectuar el repintado.<br/>
+	Saber m&aacute;s en <a href="https://developer.mozilla.org/es/docs/Web/API/Window/requestAnimationFrame" target="new" >developer.mozilla.org</a>
+</p>
+<label class="titil">Uso</label>
+<pre>
+<span class="privadas">requestAnimationFrame</span> <span class="coment1">//o</span>
+<span class="privadas">window</span>.<span class="privadas">requestAnimationFrame</span>
+</pre>
+<label class="titil">window.navigator.getUserMedia</label>
+<p>
+	Descripci&oacute;n: Pide al usuario permiso para usar un dispositivo multimedia como 
+	una c&aacute;mara o micr&oacute;fono. Si el usuario concede este permiso, el successCallback es invocado en la aplicaci&oacute;n llamada con un objeto LocalMediaStream como argumento.<br/>
+	Saber m&aacute;s en <a href="https://developer.mozilla.org/es/docs/Web/API/Navigator/getUserMedia" target="new" >developer.mozilla.org</a>
+</p>
+<label class="titil">Uso</label>
+<pre>
+<span class="privadas">navigator.getUserMedia</span> <span class="coment1">//o</span>
+<span class="privadas">window</span>.<span class="privadas">navigator.getUserMedia</span>
+</pre>
+<label class="titil">window.indexedDB</label>
+<p>
+	Descripci&oacute;n: IndexedDB es una API del lado del cliente, para el almacenamiento 
+	de grandes cantidades de datos estructurados y para b&uacute;squedas de alto rendimiento
+	 en esos datos, usando &iacute;ndices. Mientras DOM Storage es &uacute;til para el almacenamiento 
+	 de peque&ntilde;as cantidades de datos, no es &uacute;til para almacenar grandes cantidades de datos estructurados. IndexedDB proporciona una soluci&oacute;n.<br/>
+	Saber m&aacute;s en <a href="https://developer.mozilla.org/es/docs/IndexedDB" target="new" >developer.mozilla.org</a>
+</p>
+<label class="titil">Uso</label>
+<pre>
+<span class="privadas">indexedDB</span> <span class="coment1">//o</span>
+<span class="privadas">window</span>.<span class="privadas">indexedDB</span>
+</pre>
+<h2 class="subTitle">Nueva Funci&oacute;n nativa de Javascript</h2>
+
+<label class="titil">parseHex</label>
+<p>
+	Esta funci&oacute;n es similar a parseInt pero trabaja con valores hexadecimales devolviendo su 
+	n&uacute;mero en decimal por ejemplo si tenemos &quot;FF&quot; parseHex nos devolvera 255
+</p>

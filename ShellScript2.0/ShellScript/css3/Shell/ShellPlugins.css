@@ -1,0 +1,897 @@
+@charset "UTF-8";
+.Shel_tooltip{
+	position:absolute;
+	padding:1em;
+	margin:1em 0 3em;
+	border:2px solid #036B03;
+	color:#333;
+	background:#fff;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	transition: none !important;
+	z-index: 10;
+}
+.Shel_tooltip.left {
+  margin-left:30px;
+}
+.Shel_tooltip.right {
+  margin-right:30px;
+}
+.Shel_tooltip:before {
+  content:"";
+  position:absolute;
+  bottom:-20px;
+  left:40px;
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#036B03 transparent;
+  display:block;
+  width:0;
+}
+.Shel_tooltip:after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 44px;
+    border-width: 13px 16px 0;
+    border-style: solid;
+    border-color: #fff transparent;
+    display: block;
+    width: 0;
+}
+.Shel_tooltip.top:before {
+  top:-20px;
+  bottom:auto;
+  left:auto;
+  right:40px;
+  border-width:0 20px 20px;
+}
+.Shel_tooltip.top:after {
+    top: -13px;
+    bottom: auto;
+    left: auto;
+    right: 44px;
+    border-width: 0 16px 13px;
+}
+.Shel_tooltip.left:before {
+  top:10px;
+  bottom:auto;
+  left:-30px; 
+  border-width:15px 30px 15px 0;
+  border-color:transparent #5a8f00;
+}
+.Shel_tooltip.left:after {
+    top: 14px;
+    bottom: auto;
+    left: -21px;
+    border-width: 11px 21px 13px 0;
+    border-color: transparent #fff;
+}
+.Shel_tooltip.right:before {
+  top:10px;
+  bottom:auto;
+  left:auto;
+  right:-30px;
+  border-width:15px 0 15px 30px;
+  border-color:transparent #5a8f00;
+}
+.Shel_tooltip.right:after {
+    top: 14px;
+    bottom: auto;
+    left: auto;
+    right: -21px;
+    border-width: 11px 0 13px 21px;
+    border-color: transparent #fff;
+}
+.SMcolorpicker{
+	background-color:#fff !important;
+}
+
+
+.ShellDialog,
+.SMcolorpicker
+{
+	border-radius:3px;
+	border: 1px solid #088208;
+	background: transparent;
+	color: #222222;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	outline: 0;
+	transition: none;
+}
+.ShellDialog .titles:before,
+.ShellDialog .titles:after{
+   content: "";
+  display: table;
+  border-collapse: collapse;
+}
+.ShellDialog h1,
+.ShellDialog h2,
+.ShellDialog h3,
+.ShellDialog h4,
+.ShellDialog header,
+.ShellCalendario>.head,
+.SMcolorpicker header,
+.SMcolorpicker h3
+{
+	border-radius: 0px;
+	padding: 0em 1em;
+	position: relative;
+	border: 1px solid #0CBB0C;
+	background: #0CBB0C;
+	color: #ffffff;
+	font-weight: bold;
+	margin: 0;
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.69);
+}
+.ShellDialog section,
+.SMcolorpicker section,
+.ShellDialog .content{
+	position: relative;
+	border: 0;
+	padding: .5em 1em;
+	background: none;
+	overflow: auto;
+}
+.ShellDialog footer,
+.SMcolorpicker footer,
+.ShellDialog .footer{
+	text-align: left;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	background-image: none;
+	margin-top: .5em;
+	padding: .3em 1em .5em .4em;
+	border-top: 1px solid #fff;
+	background: #fcfdfd ;
+	color: #222222;
+}
+.ShellDialog .close,
+.SMcolorpicker .close
+{
+	width: 20px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 20px;
+    border: none;
+    -webkit-transform: translate(19%,-146%);
+    -moz-transform: translate(19%,-146%);
+    -ms-transform: translate(19%,-146%);
+    -o-transform: translate(19%,-146%);
+    transform: translate(19%,-146%);
+    float: right;
+}
+.ShellDialog .close span,
+.SMcolorpicker .close span,
+.ShellCalendario .close span
+{
+	font-size: 1.2em;
+}
+.ShellDialog .close:hover span,
+.SMcolorpicker .close:hover span
+{
+    font-size: 1.5em;
+    color: #fff;
+     -webkit-transform: translate(15%, -140%);
+    -moz-transform: translate(15%, -140%);
+    -ms-transform: translate(15%, -140%);
+    -o-transform: translate(15%, -140%);
+    transform: translate(15%, -140%);
+}
+
+
+#ShellModal{
+	background: rgb(12, 187, 12);
+	display: none;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 10;
+	opacity: .3;
+}
+.ShellCalendario{
+	display: none;
+	width: 40%;
+	background-color: #FFF;
+	box-shadow: 0px 0px 10px #D2CBCB;
+	border-radius: 3px;
+	z-index: 9999;
+	transition: none;
+	outline: 0;
+}
+.ShellCalendario>.head>.select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	 box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	display: block;
+	width: 60% !important; 
+	cursor: pointer;
+	border: 1px solid #fff !important;
+}
+.ShellCalendario select:after,
+.ShellCalendario>.head>.select:after{
+	font-family: "shellicon";
+	content: '\e8b7';
+	margin-left: 0.5em;
+    font-size: 1.1em;
+
+}
+.ShellCalendario>.body{
+	width:100%;
+}
+.ShellCalendario .meses{
+	width:83% !important;
+}
+.ShellCalendario>.body>table{
+	width: 100%;
+	height: 100%;
+	border: 1px solid #FFFFFF;
+	border-radius: 3px;
+	padding: 0.5em;
+}
+.ShellCalendario>.body>table tr{
+	cursor:pointer;
+}
+.ShellCalendario>.body>table tr>th{
+	border-bottom: 1px dashed #0CBB0C;
+    text-align: left;
+    font-style: normal;
+    font-weight: bolder;
+    border-radius: 0px;
+    padding: 0.3em;
+    vertical-align: middle;
+    color: #060606;
+}
+.ShellCalendario>.body>table tr>th>select,
+.ShellCalendario>.head>.select
+{
+	width: 100%;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    margin-bottom: 0;
+    background-color: #0CBB0C;
+    border: 1px solid #0CBB0C !important;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.ShellCalendario>.body>table tr>th>select:focus{
+	outline: 0 none;
+}
+.ShellCalendario>.body>table tr>td{
+	vertical-align: middle;
+	padding: 0.2em;
+	text-align: center;
+	transition:all 0.2s;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+	-ms-transition:all 0.5s;
+	-o-transition:all 0.5s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+.ShellCalendario>.body>table tr>td:hover,
+.ShellCalendario>.body>table tr>td:focus{
+	box-shadow: 0px 0px 5px rgb(12, 187, 12);
+    border-radius: 200px;
+}
+.ShellCalendario .mesactual,
+.ShellCalendario .diaactual
+{
+	background-color: rgba(12, 187, 12, 0.4);
+    border-radius: 200px;
+}
+
+.ShellCalendario span{
+	width: 100%;
+	height: 100%;
+	display: block;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+.ShellCalendario .prev{
+	float:left;
+}
+.ShellCalendario .prev:before{
+	content: '\e8bb';
+	left: 1%;
+}
+.ShellCalendario .next{
+	float:right;
+	margin-right: -36px;
+}
+.ShellCalendario .next:before{
+	content: '\e8bc';
+	right: 1%;
+}
+.ShellCalendario .prev:before,
+.ShellCalendario .next:before{
+	position: absolute;
+    top: 42%;
+    
+}
+.ShellCalendario .prev,
+.ShellCalendario .next
+{
+	font-family: "shellicon";
+	width: 16px;
+	height: 13em;
+	display: block;
+	opacity:0;
+	transition:all 0.2s;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+	-ms-transition:all 0.5s;
+	-o-transition:all 0.5s;
+	font-size: x-large;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: rgba(12, 187, 12, 0.45);
+    color: #fff;
+}
+.ShellCalendario .prev:hover,
+.ShellCalendario .next:hover
+{
+	opacity:1;
+}
+.ShellCalendario .close{
+	width: 20px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 20px;
+    border: none;
+    -webkit-transform: translate(19%,-146%);
+    -moz-transform: translate(19%,-146%);
+    -ms-transform: translate(19%,-146%);
+    -o-transform: translate(19%,-146%);
+    transform: translate(44%,-58%);
+    float: right;
+}
+.ShellCalendario .close:hover{
+	-webkit-transform: scale(1.1) translate(36%, -53%);
+    -moz-transform: scale(1.1) translate(36%, -53%);
+    -ms-transform: scale(1.1) translate(36%, -53%);
+    -o-transform: scale(1.1) translate(36%, -53%);
+    transform: scale(1.1) translate(36%, -53%);
+    color:#fff;
+}
+/*Time*/
+.ShellTime{
+	width: 15%;
+	height: 3em;
+	position: absolute;
+	background-color: #FFF;
+	padding: 0.3em;
+	box-shadow: 0px 0px 10px #D2CBCB;
+	border-radius: 5px;
+	transition: none;
+}
+.ShellTime .numero{
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+.ShellTime .numero>input[type="text"]{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: border linear .2s,box-shadow linear .2s;
+	-moz-transition: border linear .2s,box-shadow linear .2s;
+	-o-transition: border linear .2s,box-shadow linear .2s;
+	transition: border linear .2s,box-shadow linear .2s;
+	display: inline-block;
+	height: 22px;
+	padding: 4px 6px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 19px;
+	color: #555;
+	vertical-align: middle;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	width: 100%;
+}
+.ShellTime span{
+	display: inline-flex;
+	vertical-align: super;
+}
+.ShellTime .listo{
+	font-family: "shellicon";
+	width: 32px;
+	height: 32px;
+	background: transparent;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-transition: all .2s;
+	-moz-transition:all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+.ShellTime .listo:before{
+	content: '\2713';
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    color: #02750D;
+}
+.ShellTime .listo:hover{
+    font-size: 1.2em;
+}
+.slide_horizontal {
+  background:  -webkit-linear-gradient(90deg, #036B03 50%, #FFFFFF 10%);
+  background:  -moz-linear-gradient(90deg, #036B03 50%, #FFFFFF 10%);
+  background:  -o-linear-gradient(90deg, #036B03 50%, #FFFFFF 10%);
+  background:  linear-gradient(90deg, #036B03 50%, #FFFFFF 10%);
+  border-radius: 4px;
+  transition: background 3s;
+  box-shadow: 0px 0px 10px #036B03;
+}
+.slide_vertical {
+  background: -webkit-linear-gradient(0deg, #036B03 50%, #FFFFFF 10%);
+  background: -moz-linear-gradient(0deg, #036B03 50%, #FFFFFF 10%);
+  background: -o-linear-gradient(0deg, #036B03 50%, #FFFFFF 10%);
+  background: linear-gradient(0deg, #036B03 50%, #FFFFFF 10%);
+  border: none;
+  border-radius: 4px;
+  transition: background 3s;
+  box-shadow: 0px 0px 10px #036B03;
+}
+.slide_horizontal:focus{
+	outline: 0 none;
+}
+.Shell_Autocomplete{
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.Shell_Autocomplete option:hover{
+	background:#036B03 !important;
+	color:#FFF !important;
+}
+
+.ShellAlerts{
+	position: fixed !important;
+	z-index: 99999;
+	padding: 0px;
+	margin: 0px;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 300px;
+	width:32%;
+	max-width: 600px;
+	border: solid 1px #999;
+	color: #000;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 10px #999;
+	background:#FFF;
+}
+.ShellAlerts .title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+	background: #fff;
+	border-radius: 3px;
+	color:#507A03;
+}
+.ShellAlerts .content {
+	background-size: 32px 32px;
+	background-position: 16px 16px;
+	background-repeat: no-repeat;
+	padding: 1em 1.75em;
+	margin: 0em;
+	border: none;
+	color: #222222;
+	border-radius: 3px;
+	font-size: 1.2em;
+}
+.ShellAlerts .message {
+  padding-left: 48px;
+}
+.ShellAlerts .panel {
+	text-align: left;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    background-image: none;
+    margin-top: .5em;
+    padding: .3em 1em .5em .4em;
+    border-top: 1px solid #fff;
+    background: #fcfdfd;
+    color: #222;
+    font-size: 0.8em;
+}
+.ShellAlerts .panel .btn {
+  margin-right: 0.2em;
+}
+.confirm:before{
+	font-family: "shellicon";
+	content: '\e705';
+	position: absolute;
+    font-size: 2em;
+    color: #009DFF;
+    text-shadow: 0px 0px 3px #ccc;
+}
+.alert:before{
+	font-family: "shellicon";
+	content: '\e865';
+	position: absolute;
+    font-size: 2em;
+    color: #0CE420;
+    text-shadow: 0px 0px 3px #ccc;
+}
+.prompt:before{
+	font-family: "shellicon";
+	content: '\e704';
+	position: absolute;
+    font-size: 2em;
+    color: #0C19E4;
+    text-shadow: 0px 0px 3px #ccc;
+}
+.modal {
+  position: fixed;
+  z-index: 99998;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.Shellselect{
+	height: 26px;
+    display: inline-block;
+    min-width: 150px;
+    position: relative;
+    width: 17%;
+    
+}
+.Shellselect:after{
+	position: absolute;
+	font-family: "shellicon";
+	content: '\e8b7';
+	pointer-events:none;
+	top: -29%;
+    right: 2px;
+}
+.Shellselect .titels{
+	position: absolute;
+    height: 100%;
+    width: 94%;
+    font: 13px/26px "arial";
+	color: #555;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    border-radius: 2px;
+    padding-left: 10px;
+    box-shadow: inset 0 0 0px 1px #FFF, 1px 1px 3px #E4E4E4;
+}
+.Shellselect ul{
+	position: absolute;
+    top: 26px;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    z-index: 1000;
+    background: #FFF;
+    border-radius: 0 0 2px 2px;
+   /* display: none;*/
+    max-height: 12em;
+    overflow: auto;
+    transform: scaleY(0);
+    transition: all 0.3s;
+    transform-origin: top;
+}
+.Shellselect li{
+	cursor: pointer;
+    padding: 2px;
+    padding-left: 10px;
+    transition: all .3s
+}
+.Shellselect select{
+	display: none  !important;
+}
+.Shellselect .ShellOptions:hover{
+	color: #fff;
+    background-color: #076307;
+}
+.Shellselect .ShellOptGroup{
+	font-weight: bold;
+    text-align: center;
+}
+.Shellselect .ShellOptGroup:hover{
+	background: #FFF;
+	color: #555;
+}
+.Shellselect.titels:hover {
+	color: #037B03;
+}
+.ShellMsj {
+	font-size: 1em;
+    padding: 0em;
+	outline: 0 none;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    -ms-transition: all 2s;
+    transition: all 2s;
+	position: relative;
+    width: 50%;
+    margin: 0.2em;
+    text-align: left;
+    min-width: 20%;
+    border:1px solid #000;
+	color:#000;
+	clear:both;
+	 float: right;
+}
+.ShellMsj p{
+	text-indent: 0em;
+	display: inline;
+    padding: 0em 0.8em;
+    text-align: left !important;
+}
+.ShellMsj span{
+	width: 14%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+}
+.Error{
+	border:1px solid #f00;
+	color:#f00;
+}
+.Error span{
+	color: #fff;
+    background-color: #f00;
+}
+.Informacion{
+	border: 1px solid #0037FF;
+    color: #03F;
+}
+.Informacion span{
+	color: #fff;
+    background-color: #0037FF;
+}
+.Atencion{
+	border: 1px solid #B19A13;
+    color: #B19A13;
+}
+.Atencion span{
+	color: #fff;
+    background-color: #B19A13;
+}
+
+
+.ShellToggle{
+	position:relative;
+	width: 48%;
+	height: 2em;
+	display: inline-block;
+	margin-top: 3px;
+	margin-bottom: 4px;
+	border: 1px inset #0CBB0C;
+	padding: 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.ShellToggle input[type="checkbox"] {
+  display: none;
+}
+.ShellToggle .efect{
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.ShellToggle .switch{
+	height: 100%;
+	width: 24px;
+	border: 1px solid rgba(0,0,0,0.5);
+	display: block;
+	border-radius: 7px;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+    position: absolute;
+	left: 95%;
+	top: -1px;
+}
+.ShellToggle ._Off, .ShellToggle ._On{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.ShellToggle ._On > div{
+	float: left;
+}
+.ShellToggle ._Off > div{
+	float: right;
+}
+.ShellToggle ._Off > div,
+.ShellToggle ._On > div
+{
+	display: inline-block;
+	height: 100%;
+	text-align: center;
+	width: 30%;
+}
+.ShellToggle ._Off{
+	color:#fff;
+}
+.ShellToggle ._On{
+	color:#000;
+}
+.ShellMenu{
+	font-size: 1em;
+}
+.ShellMenu .ShellMenuBtn{
+	width: 4%;
+    font-size: 2em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.ShellMenu  ul li{
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	height: 44px;
+	line-height: 44px;
+	border-top: solid 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 0 1em 0 1em;
+	cursor: pointer;
+}
+.ShellMenu .no-active{
+	cursor: default !important;
+}
+.ShellMenu .no-active:hover{
+	color: #FFF !important;
+}
+.ShellMenu .lista{
+	backface-visibility: hidden;
+	transition: all 0.25s ease-in-out;
+	z-index: 10000;
+	position: fixed;
+	display: block;
+	width: 346px;
+	overflow-y: auto;
+	transform-style: preserve-3d;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	background-color: #0CBB0C;		
+	padding: 1em 0em;
+}
+.ShellMenu  .sepador{
+	height: 1px !important;
+	border: 3px dotted #BFBCBC;
+	cursor: default !important;
+}
+.ShellMenu .close{
+	float: right;
+	font-size: 2em;
+	cursor:pointer;
+}
+.ShellMenu .close:hover{
+	color: #fff;
+}
+.ShellMenu li:hover {
+   color: #E6E3E3;
+}
+.ShellFU{
+	border: 3px double #0CBB0C;
+	background-color: #fff;
+	transition: border-color 0.2s;
+	position: relative;
+	overflow: hidden;
+	width: 30em;
+	height: 17em;
+	text-align: center;
+	margin: 0 auto;
+}
+.ShellFU:hover {
+	border-color: #C9C9C9;
+}
+.ShellFU legend {
+	font-weight: bold;
+	padding: 0 0.3em;
+}
+.ShellFU> img {
+	margin: 2px;
+	max-width: 150px;
+	border: 1px solid silver;
+	padding: 1px;
+}
+.ShellFU input[type="file"]
+{
+	opacity: 0;
+	font-size: 2.1em;
+	position: absolute;
+	right: 28%;
+	top: 22%;
+	z-index: 1;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	filter: alpha(opacity=0);
+	font-family: sans-serif;
+}
+.FileOver{
+	border-color: #0CBB0C;
+}
+
+.FileEnter{
+	border-color: #4EFF00;
+}
+.Shell_seguridad_de_clave{
+	text-align: center;
+    font-size: 0.8em;
+    padding: 0;
+    margin: -11px 0em 0em;
+    height: 1em;
+    overflow: hidden;
+    outline: none;
+    background-color: #F1F1F1;
+}
+.Shell_seguridad_de_clave .low{
+	background-color: #f00;
+}
+.Shell_seguridad_de_clave .medio{
+	background-color: #FFD600;
+}
+.Shell_seguridad_de_clave .optimo{
+	background-color: #3ED005;
+}
+.Shell_seguridad_de_clave div{
+	height: 1em;
+	overflow: hidden;
+    outline: none;
+    transition: all 0.5s;
+}
+.Shell_seguridad_de_clave span{
+	display: block;
+    font-size: 0.9em;
+    position: absolute;
+    top: -122%;
+    left: 50%;
+}
+

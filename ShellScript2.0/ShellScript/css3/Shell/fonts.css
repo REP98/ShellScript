@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'shellicon';
+  src: url('font/shellicon.eot?79619477');
+  src: url('font/shellicon.eot?79619477#iefix') format('embedded-opentype'),
+       url('font/shellicon.woff?79619477') format('woff'),
+       url('font/shellicon.ttf?79619477') format('truetype'),
+       url('font/shellicon.svg?79619477#shellicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'shellicon';
+    src: url('font/shellicon.svg?79619477#shellicon') format('svg');
+  }
+}

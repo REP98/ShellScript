@@ -1,0 +1,127 @@
+<style>
+	.titil{
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>
+<h2 class="title">Formularios</h2>
+<p>
+	En este ambito tenemos muchas funciones dedicadas al tabajo de validaci&oacute;n, manipulaci&oacute;n 
+	y hasta apariencia de los formularios como hemos visto en el articulo pasado; empecemos
+</p>
+<label class="titil">FormValue</label>
+<p>
+	Esta funci&oacute;n son devuelve un objeto con las valores de un formulario basado en 
+	clave=>valor donde clave es el contenido del atributo name que posea los elementos del
+	formulario y el valor es el valor de dicho elemento.
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"miformulario"</span>).<span class="shell">FormValue</span>();
+</pre>
+<label class="titil">reset</label>
+<p>
+	Funci&oacute;n que nos permite resetar el formulario muy parecido a lo que hace
+	el input tipo reset. Pero esta funci&oacute;n no solo se la podemos colocar a un 
+	bot&oacute;n sino al formulario en si.
+</p>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"miformulario"</span>).<span class="shell">reset</span>();
+<span class="shell">S</span>(<span class="string">"mibot&oacute;n"</span>).<span class="shell">reset</span>(<span class="string">"miformulario"</span>);
+<span class="coment1">//En caso de ser un bot&oacute;n si es hijo directo del formulario se puede usar asi</span>
+<span class="shell">S</span>(<span class="string">"mibot&oacute;n"</span>).<span class="shell">reset</span>();
+</pre>
+<label class="titil">key_segure</label>
+<p>
+	Existen formularios con solicitud de claves y esta funci&oacute;n nos permite mostrarle
+	al usuario que tan segura es su clave.
+</p>
+<input type="password" name="clave" value="" placeholder="Ingresa una clave" id="ks"/>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">key_segure</span>();
+</pre>
+<h3 class="title">Validadores</h3>
+<label class="titil">ValueValido</label>
+<p>
+	Esta funci&oacute;n nos permite validar un elemento en vivo seg&uacute;n su valor o tipo
+	por ejemplo si le enviamos algo por parametros nos validara que lo escrito en un input o textarea
+	coicida con los caracteres especificos suministrados en el parametro en su defecto si no se pasa el 
+	argumento esta funci&oacute;n nos validara seg&uacute;n el tipo de elemeto.
+</p>
+<input type="text"  name="text" placeholder="Solo acepto cualquier combinación de ShellScript" id="f"/>
+<input type="email" name="email" placeholder="Solo acepto caracteres validos para un email" class="inputs"/>
+<input type="number" name="number" step="0.1" placeholder="Solo números y puntos" class="inputs"/>
+<pre>
+<span class="coment1">//Sintasis</span>
+<span class="shell">S</span>(<span class="string">"mielemento"</span>).<span class="shell">ValueValido</span>(catena para patr&oacute;n);
+<span class="coment1">//El Ejemplo</span>
+<span class="shell">S</span>(<span class="string">"input[type='text']"</span>).<span class="shell">ValueValido</span>(<span class="string">"ShellScript"</span>);
+<span class="shell">S</span>(<span class="string">"input[type='email'], input[type='number']"</span>).<span class="shell">ValueValido</span>();
+<span class="coment2">/*
+ * en el primero le estamos indicando que todos los input tipo text 
+ * solo se prodra escribir cualquier caracter que tenga la palabra 
+ * ShellScript y en el segundo le indicamos que los input tipo 
+ * email y number los validara por la acci&oacute;n 
+ * predeterminada de ShellScript
+ */</span>
+</pre>
+<label class="titil">validar</label>
+<p>
+	M&aacute;s que una funci&oacute;n se puede conciderar un plugins interno de ShellScript
+	el cual nos permite validar un formulario y obtener el valor del mismo en caso de ser valido.
+	Veamos un ejemplo.
+</p>
+<form id="mi_form">
+	<input type="text" placeholder="Ingresa tu Nombre y Apellido" name="nombre_apellido"/>
+	<input type="number" placeholder="Ingresa tu Edad" name="edad"/>
+	<input type="tel" placeholder="Ingresa tu Número Teléfonico" name="telefono">
+	<select name="sexo">
+		<option value="">Elije tu Sexo</option>
+		<option value="m">Masculino</option>
+		<option value="f">Femenino</option>
+	</select><br/>
+	<button id="a" class="Ok">Validar</button>
+	<button id="b" class="Clear">Cancelar</button>
+</form>
+<script>
+	/*
+	var validarDefaults = {
+		formulario:undefined,
+		online:true,
+		requerido:undefined,//@param {S(elem) || 'elem'}
+		fn:undefined,//@param {function(){(if(padre == form))var FormValue = this; //hacer}}
+		evento:"input click", //@param tipo de evento javascript que ejecuta la validacion
+		invalid:undefined,//@param {function(){//hacer}}
+		msm:false//true para mostrar msm por defector de Shell {Object} 
+		//msm:{css:{propety:value}} para mostrar mensaje personalizados 
+	}
+	*/
+	S("#ks").key_segure();
+	S("#f").ValueValido("ShellScript");
+	S(".inputs").ValueValido();
+	S("#mi_form").cssForm();
+	S("#a").validar({
+		fn:function(t){
+			console.dir(t);
+			console.dir(this);
+			alert("El formulario es valido",'Formulario');
+		},
+		invalid:function(t){
+			var cam = S(this);
+			/*alert(t,'Formulario',function(){
+				cam.focus();
+			});*/
+			S(this).stylo({
+				'border-color':"#F00"
+			})
+			S(this).keydown(function(){
+				S(this).stylo({
+					'border-color':"#ccc"
+				})
+			});
+		},
+		msm:true
+	})
+</script>

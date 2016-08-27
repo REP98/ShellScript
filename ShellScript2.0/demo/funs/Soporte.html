@@ -1,0 +1,34 @@
+<h2 class="title">Soporte</h2>
+<p>
+	ShellScript valida los soportes del navegdor al incorporarlos en la p&aacute;gina
+	y te ofrece 2 metodos que te permten validar y obtner todos los soporte del mismo.
+</p>
+<pre>
+<span class="shell">S</span>.<span class="shell">Soporte</span>(); <span class="coment1">//Valida y verifica los soportes del navegdor</span>
+<span class="shell">S</span>.<span class="shell">getSoporte</span>(); <span class="coment1">//Verifica si el navegdor soporta &quot;X&quot; parametro</span>
+</pre>
+<p>
+	Es muy sencillo de usar veamos su sintasis:
+</p>
+<pre>
+<span class="shell">S</span>.<span class="shell">Soporte</span>(addClass);
+<span class="coment2">/*
+ * Si addClass es establecida a TRUE le agregara en clase los nombre de todo 
+ * lo que soporta el navegdor al HTML
+ * en caso de que sea FALSE la funci&oacute;n retornara un objeto que cotendra
+ * todo lo que el navegdor soporta
+ * por defecto es FALSE
+ */
+</span> 
+<span class="shell">S</span>.<span class="shell">getSoporte</span>(propety); 
+<span class="coment2">/*
+ * propety es la propiedad que se desa validar por ejemplo 
+ * saber si el navegdor soporte Canvas retornara TRUE o FALSE.
+ */
+ </span>
+ <span class="shell">S</span>.<span class="shell">getSoporte</span>(<span class="string">&quot;Canvas&quot;</span>); <span class="coment1" id="retur"></span>
+</pre>
+<script>
+	var a = S.getSoporte("Canvas");
+	S("#retur").html("//Retornara "+a);
+</script>
