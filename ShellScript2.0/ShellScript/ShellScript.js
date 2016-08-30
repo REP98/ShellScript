@@ -14,7 +14,7 @@
  * incluidad en esta libreria
  * 
  * Copyright 2015 ShellRumm.fp
- * Licencia https://www.tldrlegal.com/l/lgpl-3.0
+ * Licencia https://creativecommons.org/licenses/by-nc-sa/4.0/
 **/
 (function(window, document, undefined) {
 console.log(
